@@ -126,7 +126,14 @@ with chats:
         user_hist.append(user_message)
         reply_hist.append(random_greeting)
 
+# Clearing Chat History 
+def clearHistory():
+    with open('history.txt', 'w') as file:
+        pass  
 
+    with open('reply.txt', 'w') as file:
+        pass
+        
 # Save the history of user texts
 import csv
 with open('history.txt', 'a') as file:
@@ -157,7 +164,8 @@ st.subheader('Chat History', divider = True)
 st.dataframe(history, use_container_width= True)
 # st.sidebar.write(data2)
 
-     
+if st.button('End Chat'):
+    clearHistory()     
 
 
 
